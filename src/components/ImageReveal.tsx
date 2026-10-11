@@ -54,7 +54,7 @@ export default function ImageReveal({ image, className = "", sizes, priority = f
   return (
     <div ref={ref} className={`relative overflow-hidden ${zoom ? "img-zoom" : ""} ${className}`}>
       <Img image={image} className="h-full w-full" sizes={sizes} priority={priority} />
-      <div data-cover aria-hidden className="pointer-events-none absolute inset-0 hidden bg-stone [html.js_&]:block" />
+      <div data-cover aria-hidden className="pointer-events-none absolute inset-0 hidden bg-stone" />
     </div>
   );
 }

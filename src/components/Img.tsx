@@ -17,7 +17,7 @@ interface Props {
 export default function Img({ image, className = "", imgClassName = "", sizes = "100vw", priority = false, decorative = false }: Props) {
   const { t } = useLang();
   return (
-    <div className={`relative overflow-hidden bg-stone ${className}`}>
+    <div className={`${/\b(absolute|fixed)\b/.test(className) ? "" : "relative"} overflow-hidden bg-stone ${className}`}>
       <Image
         src={image.src}
         alt={decorative ? "" : t(image.alt)}

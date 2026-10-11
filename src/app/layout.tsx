@@ -48,7 +48,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning className={`${serif.variable} ${sans.variable} ${ar.variable}`}>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `document.documentElement.classList.add("js");${LANG_BOOT_SCRIPT}` }} />
+        <style dangerouslySetInnerHTML={{ __html: "@media (prefers-reduced-motion: no-preference){html [data-reveal]{opacity:0}html [data-cover]{display:block}}" }} />
+        <noscript>
+          <style dangerouslySetInnerHTML={{ __html: "[data-reveal]{opacity:1!important}[data-cover]{display:none!important}" }} />
+        </noscript>
+        <script dangerouslySetInnerHTML={{ __html: LANG_BOOT_SCRIPT }} />
       </head>
       <body>
         <JsonLd data={ORG} />
